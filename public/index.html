@@ -3,16 +3,211 @@
 <head>
 	<title>Avanade Angular Academy by Gama - Simulado #1</title>
 	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:900" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-<main role="main" id="main"></main>
+<main role="main" id="main">
+
+	<div class="alert alert-success alert-dismissible show alerta-sucesso" role="alert" id="apply-success">
+	  <strong>Parabéns!</strong> Em breve entraremos em contato.
+	</div>
+
+	<div class="alert alert-warning alert-dismissible show alerta-erro" role="alert" id="apply-error">
+	  <strong>Ocorreu um erro!</strong> Tente novamente mais tarde.
+	</div>
+
+	<div class="banner">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="title">DÊ PROPÓSITO PARA SEU CÓDIGO</p>
+				</div>
+
+				<div class="col-lg-12">
+					<p class="text-banner">Cansado de desenvolver projetos sem sentido? Participe do Avanade Angular Academy</p>
+				</div>
+
+				<div class="col-lg-12">
+					<button type="button" class="btn btn-success" data-toggle="modal" data-target="#apply-modal" id="btn-apply-form">
+					  Inscreva-se
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="container">
+		<div class="row">
+
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 box">
+				<label class="box-title">Inscrições</label>
+				<p class="box-date">02/dez a 03/jan</p>
+				<p class="box-text">Para se inscrever basta preencher o formulário e se preparar para o nosso teste técnico com cursos online e simulados.</p>
+			</div>
+
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 box">
+				<label class="box-title">Teste técnico</label>
+				<p class="box-date">05 a 06/jan</p>
+				<p class="box-text">Em seguida, prove que você está preparado fazendo os teste técnicos totalmente mão na massa.</p>
+			</div>
+
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 box">
+				<label class="box-title">Seleção e Contratação</label>
+				<p class="box-date">07 a 13/jan</p>
+				<p class="box-text">Os melhores candidatos serão entrevistados e contratados pela Avanade.</p>
+			</div>
+
+			<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 box">
+				<label class="box-title">Treinamento</label>
+				<p class="box-date">15/jan a 26/jan</p>
+				<p class="box-text">Serão duas semanas de treinamento super hands-on com os melhores devs do mercado.</p>
+			</div>
+		</div>
+	</div>
+</main>
+
+<!-- modal -->
+<div class="modal fade" id="apply-modal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Inscreva-se</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+      <form>
+      	<div class="modal-body">
+
+		  <div class="row">
+
+		    <div class="col-md-12 mb-6">
+		      <label for="name">Nome</label>
+		      <input type="text" class="form-control" id="name" placeholder="Digite seu nome">
+		      <div class="invalid-feedback" id="feedback-name">
+		        Não pode estar vazio.
+		      </div>
+		    </div>
+
+		    <div class="col-md-12 mb-6">
+		      <label for="email">Email</label>
+		      <input type="text" class="form-control" id="email" placeholder="Digite seu email">
+		      <div class="invalid-feedback" id="feedback-email">
+		        Não pode estar vazio.
+		        <br/>Não é válido.
+		      </div>
+		    </div>
+
+		  </div>
+
+
+      	</div>
+
+		<div class="modal-footer">
+			<button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+			<button type="button" class="btn btn-primary" id="btn-apply">Desafio Aceito!</button>
+		</div>
+      </form>
+
+    </div>
+  </div>
+</div>
 <script
   src="https://code.jquery.com/jquery-3.2.1.min.js"
   integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
   crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+<script type="application/javascript">
+
+$('#btn-apply-form').click(function()
+{
+	$('#name').val('');
+	$('#email').val('');
+	$('#name').removeClass('is-invalid');
+	$('#email').removeClass('is-invalid');
+});
+	
+$('#name').focusout(function(){
+    return validate($('#name').val());
+});
+
+$('#email').focusout(function(){
+    return validate($('#email').val(), true);
+});
+
+
+function validate(ipt, mail = false)
+{
+	if (ipt.trim() === '') 
+	{
+		if (mail)
+		{
+			$('#email').addClass('is-invalid');
+		} else {
+			$('#name').addClass('is-invalid');
+			return false;
+		}
+
+	}
+
+	if (mail)
+	{	
+		var pattern = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  		var re = pattern.test( ipt );
+
+    	if (re)
+    	{
+    		$('#email').removeClass('is-invalid');
+			return true;
+    	} else {
+    		$('#email').addClass('is-invalid');
+			return false;
+    	}
+	}else {
+		$('#name').removeClass('is-invalid');
+		return true;
+	}
+}
+
+$('#btn-apply').click(function(){
+
+	var name = validate($('#name').val()),
+		email = validate($('#email').val(), true);
+
+	if (name === false || email === false)
+	{
+		$('#apply-modal').modal('toggle');
+		$('.alerta-sucesso').css('display', 'none');
+		$('.alerta-erro').css('display', 'block');
+		return false;
+	}
+
+	$.ajax({
+		method: 'POST',
+		url: 'http://avanade.gama.academy/api/process_applications',
+		dataType: 'json',
+		headers: { EMAIL: 'angelo.a.novello@hotmail.com' }, // coloque seu email que usou para se inscrever aqui!
+		contentType: 'application/json',
+		data: JSON.stringify({ process_application: { name: $('#name').val(), email: $('#email').val() } }),
+		success: function(json) { 
+			$('#apply-modal').modal('toggle');
+			$('.alerta-sucesso').css('display', 'block');
+			$('.alerta-erro').css('display', 'none');
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			$('#apply-modal').modal('toggle');
+			$('.alerta-sucesso').css('display', 'none');
+			$('.alerta-erro').css('display', 'block');
+		}
+	});
+});
+</script>
 </body>
 </html>
